@@ -33,7 +33,15 @@
 
         function displayMatches() {
             const matched = findMatches(this.value, pokedex);
-            console.log(matched);
+            const html = matched.map(pokemon => {
+                return `
+                    <li>
+                        <span class="name">${pokemon.name}</span>
+                        <span class="num">${pokemon.num}</span>
+                    </li>
+                `;
+            }).join('');
+            suggestions.innerHTML = html;
         }
 
         const searchInput = document.querySelector('.search');
