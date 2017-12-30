@@ -9,8 +9,8 @@
 </head>
 <body>
     <form action="post">
-        <input type="text" placeholder="Pokemon Name">
-        <ul>
+        <input class="search" type="text" placeholder="Pokemon Name">
+        <ul class="search_suggestions">
             <li>Choose.</li>
             <li>Your.</li>
             <li>Pokemon.</li>
@@ -30,6 +30,17 @@
                 return pokemon.name.match(regex);
             })
         }
+
+        function displayMatches() {
+            const matched = findMatches(this.value, pokedex);
+            console.log(matched);
+        }
+
+        const searchInput = document.querySelector('.search');
+        const suggestions = document.querySelector('.search_suggestions');
+
+        searchInput.addEventListener('change', displayMatches);
+        searchInput.addEventListener('keyup', displayMatches);
     </script>
 </body>
 </html>
