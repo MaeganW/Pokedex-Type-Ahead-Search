@@ -24,6 +24,12 @@
             .then(blob => blob.json())
             .then(data => pokedex.push(...data.pokemon));
 
+        function findMatches(word, pokedex) {
+            return pokedex.filter(pokemon => {
+                const regex = new RegExp(word, 'gi');
+                return pokemon.name.match(regex);
+            })
+        }
     </script>
 </body>
 </html>
