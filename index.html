@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Type Ahead Search Input</title>
+    <title>Pokedex Type Ahead Search Input</title>
 </head>
 <body>
     <form action="post">
@@ -34,9 +34,11 @@
         function displayMatches() {
             const matched = findMatches(this.value, pokedex);
             const html = matched.map(pokemon => {
+                const regex = new RegExp(this.value, 'gi');
+                const pokemonName = pokemon.name.replace(regex, `<span class="highlight">${this.value}</span>`);
                 return `
                     <li>
-                        <span class="name">${pokemon.name}</span>
+                        <span class="name">${pokemonName}</span>
                         <span class="num">${pokemon.num}</span>
                     </li>
                 `;
