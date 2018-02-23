@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/MaeganW/Pokedex-Type-Ahead-Search/issues"
   },
-  "homepage": "https://github.com/MaeganW/Pokedex-Type-Ahead-Search#readme"
+  "homepage": "https://github.com/MaeganW/Pokedex-Type-Ahead-Search#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
