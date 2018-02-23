@@ -5,7 +5,7 @@ const http = require('http').Server(app);
 
 app.use('/img', express.static(path.join(__dirname + '/img')));
 
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
